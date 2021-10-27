@@ -37,8 +37,9 @@ public class BeanBeispielApplication {
             public void run(String... args) throws Exception {
                 log.debug(beanController.putMessage("Hallo Welt"));
                 log.debug(beanController.putMessage("--> OOOHOOO <--"));
-                messageService.setMessage("TestEingabe");
-                System.out.println(messageService.getMessage());
+                //messageService.getMessage();
+                //messageService.setMessage("TestEingabe");
+                //System.out.println(messageService.getMessage());
             }
 
         };
