@@ -12,7 +12,7 @@ public class NotenDurchschnittApplication {
         SpringApplication.run(NotenDurchschnittApplication.class, args);
     }
 
-    @Bean
+    /*@Bean
     CommandLineRunner init() {
         CommandLineRunner action = new CommandLineRunner() {
             @Override
@@ -21,5 +21,5 @@ public class NotenDurchschnittApplication {
             }
         };
         return action;
-    }
+    }*/
 }
