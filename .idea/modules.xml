@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BeanBeispiel/BeanBeispiel.iml" filepath="$PROJECT_DIR$/BeanBeispiel/BeanBeispiel.iml" />
-      <module fileurl="file://$PROJECT_DIR$/NotenDurchschnitt/NotenDurchschnitt.iml" filepath="$PROJECT_DIR$/NotenDurchschnitt/NotenDurchschnitt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BeanCounter/BeanCounter.iml" filepath="$PROJECT_DIR$/BeanCounter/BeanCounter.iml" />
       <module fileurl="file://$PROJECT_DIR$/NotenDurchschnitt2/NotenDurchschnitt2.iml" filepath="$PROJECT_DIR$/NotenDurchschnitt2/NotenDurchschnitt2.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/WBA.iml" filepath="$PROJECT_DIR$/.idea/WBA.iml" />
     </modules>

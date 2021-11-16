@@ -8,11 +8,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="NotenDurchschnitt2" />
         <module name="BeanBeispiel" />
-        <module name="NotenDurchschnitt" />
+        <module name="BeanCounter" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="BeanBeispiel" target="17" />
+      <module name="BeanCounter" target="17" />
       <module name="NotenDurchschnitt" target="17" />
       <module name="NotenDurchschnitt2" target="17" />
     </bytecodeTargetLevel>
@@ -20,6 +21,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="BeanBeispiel" options="-parameters" />
+      <module name="BeanCounter" options="-parameters" />
       <module name="NotenDurchschnitt" options="-parameters" />
       <module name="NotenDurchschnitt2" options="-parameters" />
     </option>
