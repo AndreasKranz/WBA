@@ -1,6 +1,6 @@
 package com.example.notendurchschnitt2;
 
-import com.example.notendurchschnitt2.controller.NotenController;
+import com.example.notendurchschnitt2.average.controller.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

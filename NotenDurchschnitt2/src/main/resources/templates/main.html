@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Durchschnittsrechner</title>
+</head>
+<body>
+
+<form action="/durchschnitt">
+    <input type="text" name="notenEingabe" value="">
+
+    <input type="submit" value="Durchschnitt">
+
+</form>
+
+<h1 th:text="${average}" />
+
+</body>
+</html>
