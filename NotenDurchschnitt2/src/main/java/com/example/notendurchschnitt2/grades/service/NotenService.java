@@ -1,4 +1,4 @@
-package com.example.notendurchschnitt2.average.service;
+package com.example.notendurchschnitt2.grades.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

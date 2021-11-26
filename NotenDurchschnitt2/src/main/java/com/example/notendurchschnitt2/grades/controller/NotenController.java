@@ -1,7 +1,7 @@
-package com.example.notendurchschnitt2.average.controller;
+package com.example.notendurchschnitt2.grades.controller;
 
-import com.example.notendurchschnitt2.average.service.NotenService;
-import com.example.notendurchschnitt2.average.service.UserService;
+import com.example.notendurchschnitt2.grades.service.NotenService;
+import com.example.notendurchschnitt2.grades.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
