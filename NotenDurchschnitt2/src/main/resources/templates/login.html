@@ -6,9 +6,9 @@
 </head>
 <body>
     <form th:action="@{/first}" method="post">
-        <input type="text" name="email" id="email" required="true" autofocus="true">
+        <input type="text" name="email" id="email" placeholder="email" required="true" autofocus="true">
 
-        <input type="password" id="password" required="true">
+        <input type="password" id="password" placeholder="password" required="true">
 
         <input type="submit" th:value="login">
     </form>

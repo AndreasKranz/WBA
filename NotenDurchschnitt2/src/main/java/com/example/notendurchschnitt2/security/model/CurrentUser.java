@@ -33,6 +33,10 @@ public class CurrentUser {
     public String getNickname() {
         return user.getNickname();}
 
+    public String getEmail() {
+        return email;
+    }
+
     @Override
     public String toString() {
         return "CurrentUser{" +

@@ -2,9 +2,14 @@ package com.example.notendurchschnitt2.security.model;
 
 
 import com.example.notendurchschnitt2.common.BaseEntity;
+import com.example.notendurchschnitt2.Note.model.Note;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "secuser")
@@ -21,6 +26,11 @@ public class User extends BaseEntity<Long> {
 
     @Column(name = "role", nullable = false)
     private Role role;
+
+    //Test die Noten direkt im User zu speichern
+    @OneToMany
+    private List<Note> notenListe;
+
 
     public Long getId() {
         return super.getId();
@@ -56,6 +66,15 @@ public class User extends BaseEntity<Long> {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    //Test die Notenliste im User zu speichern
+    public List<Note> getNotenListe() {
+        return notenListe;
+    }
+
+    public void setNotenListe(List<Note> notenListe) {
+        this.notenListe = notenListe;
     }
 
     @Override

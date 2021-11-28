@@ -1,5 +1,6 @@
 package com.example.notendurchschnitt2.security.service.user;
 
+import com.example.notendurchschnitt2.Note.model.Note;
 import com.example.notendurchschnitt2.security.model.User;
 import com.example.notendurchschnitt2.security.model.UserCreateForm;
 import com.example.notendurchschnitt2.security.repository.UserRepository;
@@ -72,6 +73,7 @@ public class UserServiceImpl implements UserService{
         user.setNickname(form.getNickname());
         user.setPassword(form.getPassword());
         user.setRole(form.getRole());
+        user.setNotenListe(new ArrayList<Note>());
         return userRepository.save(user);
     }
 }
