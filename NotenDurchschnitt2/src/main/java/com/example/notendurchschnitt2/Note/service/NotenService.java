@@ -23,12 +23,16 @@ public class NotenService {
     }*/
 
     public void addNote(List<Note> arrList, String fach, double inputNote){
-        arrList.add(erzeugeNote(fach,inputNote));
+
+        Note temp = new Note(fach,inputNote);
+        log.debug("--> neue Note erstellt");
+        arrList.add(temp);
+        log.debug("--> füge neu erstellte Note zur Liste");
     }
 
-    public Note erzeugeNote(String fach, double note){
+    /*public Note erzeugeNote(String fach, double note){
         return new Note(fach,note);
-    }
+    }*/
 
     public double getDurchschnitt(List<Note> arrList){
         double summe = 0.0;

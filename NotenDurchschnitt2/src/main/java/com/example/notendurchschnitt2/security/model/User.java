@@ -4,10 +4,7 @@ package com.example.notendurchschnitt2.security.model;
 import com.example.notendurchschnitt2.common.BaseEntity;
 import com.example.notendurchschnitt2.Note.model.Note;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +26,7 @@ public class User extends BaseEntity<Long> {
 
     //Test die Noten direkt im User zu speichern
     @OneToMany
-    private List<Note> notenListe;
+    private List<Note> notenListe = new ArrayList<>();
 
 
     public Long getId() {

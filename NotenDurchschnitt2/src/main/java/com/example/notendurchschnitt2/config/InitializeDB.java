@@ -32,7 +32,7 @@ public class InitializeDB {
         user.setNickname("admin");
         user.setEmail("admin@example.com");
         user.setPassword("admin");
-        user.setNotenListe(new ArrayList<Note>());
+        //user.setNotenListe(new ArrayList<Note>());
         user.setRole(Role.ADMIN);
         userRepository.save(user);
     }

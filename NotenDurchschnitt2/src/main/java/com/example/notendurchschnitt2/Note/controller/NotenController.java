@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -35,6 +36,7 @@ public class NotenController {
         this.currentUser = currentUser;
     }
 
+
     public void fuegeNoteZu(String fach, double note) {
         List<Note> temp = currentUser.getUser().getNotenListe();
         notenService.addNote(temp, fach, note);
@@ -59,8 +61,8 @@ public class NotenController {
         return "main";
     }
 
-    @RequestMapping("/durchschnitt")
-    public String berechneDurchschnitt(@RequestParam(value = "notenEingabe", required = false, defaultValue = "0.1") String notenFach, String notenEingabe, Model model) {
+    @PostMapping("/durchschnitt")
+    public String berechneDurchschnitt(@RequestParam String notenFach,@RequestParam String notenEingabe, Model model) {
         double input = Double.parseDouble(notenEingabe);
 
         if (input != 0.1) {
