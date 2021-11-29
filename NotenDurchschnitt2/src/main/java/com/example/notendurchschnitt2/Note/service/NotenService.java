@@ -1,6 +1,7 @@
 package com.example.notendurchschnitt2.Note.service;
 
 import com.example.notendurchschnitt2.Note.model.Note;
+import com.example.notendurchschnitt2.security.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -22,12 +23,10 @@ public class NotenService {
 
     }*/
 
-    public void addNote(List<Note> arrList, String fach, double inputNote){
+    public void addNote(User user, Note note){
 
-        Note temp = new Note(fach,inputNote);
-        log.debug("--> neue Note erstellt");
-        arrList.add(temp);
-        log.debug("--> füge neu erstellte Note zur Liste");
+        user.addNote(note);
+        log.debug("--> füge neue Note zur Liste");
     }
 
     /*public Note erzeugeNote(String fach, double note){

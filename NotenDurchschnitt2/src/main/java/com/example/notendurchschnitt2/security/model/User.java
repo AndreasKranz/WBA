@@ -74,6 +74,10 @@ public class User extends BaseEntity<Long> {
         this.notenListe = notenListe;
     }
 
+    public void addNote(Note note){
+        this.notenListe.add(note);
+    }
+
     @Override
     public String toString() {
         return "User{" +

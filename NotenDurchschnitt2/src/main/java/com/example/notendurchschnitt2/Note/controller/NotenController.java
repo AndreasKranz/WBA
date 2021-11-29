@@ -3,6 +3,7 @@ package com.example.notendurchschnitt2.Note.controller;
 import com.example.notendurchschnitt2.Note.model.Note;
 import com.example.notendurchschnitt2.Note.service.NotenService;
 import com.example.notendurchschnitt2.security.model.CurrentUser;
+import com.example.notendurchschnitt2.security.model.User;
 import com.example.notendurchschnitt2.security.service.user.UserService;
 import com.example.notendurchschnitt2.security.service.user.UserServiceImpl;
 import org.slf4j.Logger;
@@ -38,8 +39,8 @@ public class NotenController {
 
 
     public void fuegeNoteZu(String fach, double note) {
-        List<Note> temp = currentUser.getUser().getNotenListe();
-        notenService.addNote(temp, fach, note);
+        User temp = currentUser.getUser();
+        notenService.addNote(temp,new Note(fach,note));
     }
 
     @RequestMapping(value = "/first", method = {RequestMethod.GET, RequestMethod.POST})
