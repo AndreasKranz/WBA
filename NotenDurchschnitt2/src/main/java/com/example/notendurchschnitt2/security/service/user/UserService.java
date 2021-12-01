@@ -1,5 +1,6 @@
 package com.example.notendurchschnitt2.security.service.user;
 
+import com.example.notendurchschnitt2.Note.model.Note;
 import com.example.notendurchschnitt2.security.model.User;
 import com.example.notendurchschnitt2.security.model.UserCreateForm;
 import com.example.notendurchschnitt2.security.service.dto.UserDTO;
@@ -16,6 +17,8 @@ public interface UserService {
     boolean existsByNickname(String nickname);
 
     boolean existsByEmail(String email);
+
+    void addNote(User user, Note note);
 
     Collection<UserDTO> getAllUsers();
 

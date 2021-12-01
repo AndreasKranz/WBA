@@ -43,6 +43,13 @@ public class UserServiceImpl implements UserService{
         return userRepository.findOneByEmail(email);
     }
 
+    public void addNote(User user, Note note){
+
+        user.addNote(note);
+        userRepository.save(user);
+        log.debug("--> füge neue Note zur Liste");
+    }
+
     @Override
     public boolean existsByNickname(String nickname) {
         return userRepository.existsByNickname(nickname);

@@ -23,11 +23,7 @@ public class NotenService {
 
     }*/
 
-    public void addNote(User user, Note note){
 
-        user.addNote(note);
-        log.debug("--> füge neue Note zur Liste");
-    }
 
     /*public Note erzeugeNote(String fach, double note){
         return new Note(fach,note);

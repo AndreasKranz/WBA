@@ -25,8 +25,12 @@ public class User extends BaseEntity<Long> {
     private Role role;
 
     //Test die Noten direkt im User zu speichern
-    @OneToMany
-    private List<Note> notenListe = new ArrayList<>();
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Note> notenListe;
+
+    public User(){
+        this.notenListe = new ArrayList<>();
+    }
 
 
     public Long getId() {

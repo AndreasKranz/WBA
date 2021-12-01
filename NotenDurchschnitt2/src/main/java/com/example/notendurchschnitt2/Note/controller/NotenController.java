@@ -40,7 +40,7 @@ public class NotenController {
 
     public void fuegeNoteZu(String fach, double note) {
         User temp = currentUser.getUser();
-        notenService.addNote(temp,new Note(fach,note));
+        userService.addNote(temp,new Note(fach,note,temp));
     }
 
     @RequestMapping(value = "/first", method = {RequestMethod.GET, RequestMethod.POST})
