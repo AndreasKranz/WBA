@@ -1,10 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+
+    <h5>new user...</h5>
+    <form th:action="@{/usercreate}" th:object="${myform}" method="post" role="form">
+        <input type="text" name="nickname" placeholder="nickname" required="true" autofocus="true">
+        <input type="text" name="email" placeholder="email" required="true">
+        <input type="password" name="password" placeholder="password" required="true">
+        <input type="password" name="passwordRepeated" placeholder="password repeated" required="true">
+        <br>
+        <input type="submit" th:value="save">
+        <a>
+            <span th:if="${error}" th:text="${error}">The email or password you have entered is invalid,try again.</span>
+        </a>
+    </form>
+
+    <br>
+    <li>
+    <form th:action="@{/start}" method="post">
+        <input type="hidden" name="fromUser" id="fromUser" th:value="${currentUser.nickname}">
+        <input type="submit" class="btn btn-outline-dark" th:value="ready">
+    </form>
+    </li>
+    <li  th:if="${currentUser != null}">
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" class="btn btn-outline-success" value="logout">
+        </form>
+    </li>
+    </li>
 
 </body>
 </html>

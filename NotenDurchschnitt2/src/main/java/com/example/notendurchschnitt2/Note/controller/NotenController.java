@@ -76,6 +76,21 @@ public class NotenController {
         return "main";
     }
 
+    @RequestMapping(value = "/start", method = {RequestMethod.POST, RequestMethod.GET})
+    public String startPage(@RequestParam String fromUser, Model model) {
+        log.debug("GET /start --> noteneingabe fenster von " + fromUser);
+        String from = getCurrentUser(model);
+        //List<ConversationDTO> targetList = conversationUserService.getAllConversationsFrom(from);
+        //model.addAttribute("listAllConversations", targetList);
+        return "main";
+    }
+
+    private String getCurrentUser(Model model) {
+        String from = currentUser.getUser().getNickname();
+        model.addAttribute("fromUser", from);
+        return from;
+    }
+
     public double drawDurchschnitt(List<Note> arrInput) {
         return notenService.getDurchschnitt(arrInput);
     }

@@ -59,7 +59,7 @@ public class UserController {
         return "user_create";
     }
 
-    @RequestMapping(value = "/users/create", method = RequestMethod.POST)
+    @RequestMapping(value = "/usercreate", method = RequestMethod.POST)
     public String handleUserCreateForm(@Valid @ModelAttribute("myform") UserCreateForm form, BindingResult bindingResult, Model model) {
         log.info("/users/create --> processing user create form= " + form + " bindingResult= " + bindingResult);
         model.addAttribute("users", userService.getAllUsers());

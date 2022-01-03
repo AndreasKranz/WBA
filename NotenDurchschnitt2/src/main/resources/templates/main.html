@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<form action="/durchschnitt" method = "post">
+<form th:action="@{/start}" method="post">
     <input type="text" name="notenEingabe" id="notenEingabe" placeholder="Note" value="">
     <input type="text" name="notenFach" id="notenFach" placeholder="Fach" value="">
 
@@ -15,6 +15,11 @@
 </form>
 
 <h1 th:text="${average}" />
+
+<br>
+<form th:action="@{'/users/' + ${currentUser.id}}" method="post">
+    <input type="submit" class="btn btn-outline-secondary"	value="profile">
+</form>
 
 </body>
 </html>

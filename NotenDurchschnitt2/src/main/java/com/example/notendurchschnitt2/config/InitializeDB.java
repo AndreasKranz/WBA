@@ -35,5 +35,13 @@ public class InitializeDB {
         //user.setNotenListe(new ArrayList<Note>());
         user.setRole(Role.ADMIN);
         userRepository.save(user);
+
+        User user1 = new User();
+        user1.setNickname("bob");
+        user1.setEmail("bob@example.com");
+        user1.setPassword("bob");
+        //user.setNotenListe(new ArrayList<Note>());
+        user1.setRole(Role.USER);
+        userRepository.save(user1);
     }
 }
