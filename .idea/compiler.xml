@@ -7,8 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="NotenDurchschnitt2" />
-        <module name="BeanBeispiel" />
+        <module name="SocialApp05" />
         <module name="BeanCounter" />
+        <module name="BeanBeispiel" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -16,6 +17,7 @@
       <module name="BeanCounter" target="17" />
       <module name="NotenDurchschnitt" target="17" />
       <module name="NotenDurchschnitt2" target="17" />
+      <module name="SocialApp05" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -24,6 +26,7 @@
       <module name="BeanCounter" options="-parameters" />
       <module name="NotenDurchschnitt" options="-parameters" />
       <module name="NotenDurchschnitt2" options="-parameters" />
+      <module name="SocialApp05" options="-parameters" />
     </option>
   </component>
 </project>
