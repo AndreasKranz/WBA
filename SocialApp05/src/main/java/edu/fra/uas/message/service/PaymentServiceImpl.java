@@ -1,27 +1,11 @@
 package edu.fra.uas.message.service;
 
-import org.apache.tomcat.util.codec.binary.Base64;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.ResourceAccessException;
-import org.springframework.web.client.RestTemplate;
-
-import edu.fra.uas.message.service.dto.AccountResponseDTO;
-import edu.fra.uas.message.service.dto.PayActionResponseDTO;
-import edu.fra.uas.message.service.dto.TransferDTO;
 
 @Service
-public class PaymentServiceImpl implements PaymentService {
+public class PaymentServiceImpl {//implements PaymentService {
 
-    private static final Logger log = LoggerFactory.getLogger(PaymentServiceImpl.class);
+    /*private static final Logger log = LoggerFactory.getLogger(PaymentServiceImpl.class);
 
     @Value("${paymentservice.url}")
     String paymentUrl;
@@ -123,5 +107,5 @@ public class PaymentServiceImpl implements PaymentService {
         }
         return payActionResponse;
     }
-
+*/
 }

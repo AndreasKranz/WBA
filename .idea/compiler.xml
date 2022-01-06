@@ -10,11 +10,13 @@
         <module name="SocialApp05" />
         <module name="BeanCounter" />
         <module name="BeanBeispiel" />
+        <module name="JokeService" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="BeanBeispiel" target="17" />
       <module name="BeanCounter" target="17" />
+      <module name="JokeService" target="17" />
       <module name="NotenDurchschnitt" target="17" />
       <module name="NotenDurchschnitt2" target="17" />
       <module name="SocialApp05" target="17" />
@@ -24,6 +26,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="BeanBeispiel" options="-parameters" />
       <module name="BeanCounter" options="-parameters" />
+      <module name="JokeService" options="-parameters" />
       <module name="NotenDurchschnitt" options="-parameters" />
       <module name="NotenDurchschnitt2" options="-parameters" />
       <module name="SocialApp05" options="-parameters" />

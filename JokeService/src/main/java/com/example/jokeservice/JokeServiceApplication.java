@@ -1,13 +1,13 @@
-package edu.fra.uas.socialapp05;
+package com.example.jokeservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SocialApp05Application {
+public class JokeServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SocialApp05Application.class, args);
+        SpringApplication.run(JokeServiceApplication.class, args);
     }
 
 }

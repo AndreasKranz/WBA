@@ -1,15 +1,5 @@
 package edu.fra.uas.config;
 
-import javax.annotation.PostConstruct;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.factory.PasswordEncoderFactories;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Component;
-
 import edu.fra.uas.conversation.model.Conversation;
 import edu.fra.uas.conversation.model.ConversationType;
 import edu.fra.uas.conversation.model.ConversationUser;
@@ -20,6 +10,14 @@ import edu.fra.uas.message.repository.MessageRepository;
 import edu.fra.uas.security.model.Role;
 import edu.fra.uas.security.model.User;
 import edu.fra.uas.security.repository.UserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
 
 @Component
 public class InitializeDB {
@@ -83,18 +81,29 @@ public class InitializeDB {
         bot.setConversationType(ConversationType.Bot);
         conversationUserRepository.save(bot);
 
+        ConversationUser bot1 = new ConversationUser();
+        bot1.setNickname("js");
+        bot.setConversationType(ConversationType.Bot);
+        conversationUserRepository.save(bot1);
+
         Conversation conversation1 = new Conversation(user2.getNickname(), user3);
         Conversation conversation2 = new Conversation(user3.getNickname(), user2);
 
         Conversation conversation3 = new Conversation(bot.getNickname(), user2);
         Conversation conversation4 = new Conversation(user2.getNickname(), bot);
 
+        Conversation conversation5 = new Conversation(bot1.getNickname(),user2);
+        Conversation conversation6 = new Conversation(user2.getNickname(), bot1);
+
         user2.addConversation(conversation1);
         user2.addConversation(conversation3);
         user3.addConversation(conversation2);
+        user2.addConversation(conversation5);
         conversationRepository.save(conversation1);
         conversationRepository.save(conversation2);
         conversationRepository.save(conversation3);
+        conversationRepository.save(conversation5);
+        conversationRepository.save(conversation6);
 
         Message message1 = new Message("Hello Bob", conversation1, "out");
         messageRepository.save(message1);

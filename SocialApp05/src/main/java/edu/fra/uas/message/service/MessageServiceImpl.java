@@ -1,21 +1,20 @@
 package edu.fra.uas.message.service;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import edu.fra.uas.conversation.model.Conversation;
+import edu.fra.uas.conversation.model.ConversationUser;
+import edu.fra.uas.conversation.service.ConversationService;
+import edu.fra.uas.conversation.service.ConversationUserService;
+import edu.fra.uas.message.model.Message;
+import edu.fra.uas.message.service.dto.JokeActionResponseDTO;
+import edu.fra.uas.message.service.dto.MessageDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import edu.fra.uas.conversation.model.Conversation;
-import edu.fra.uas.conversation.model.ConversationUser;
-import edu.fra.uas.conversation.service.ConversationService;
-import edu.fra.uas.conversation.service.ConversationUserService;
-import edu.fra.uas.message.model.Message;
-import edu.fra.uas.message.service.dto.MessageDTO;
-import edu.fra.uas.message.service.dto.PayActionResponseDTO;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class MessageServiceImpl implements MessageService {
@@ -26,14 +25,17 @@ public class MessageServiceImpl implements MessageService {
 
     private ConversationService conversationService;
 
-    private PaymentService paymentService;
+    //private PaymentService paymentService;
+
+    private ComedyService comedyService;
 
     @Autowired
-    public MessageServiceImpl(ConversationUserService conversationUserService, ConversationService conversationService, PaymentService paymentService) {
+    public MessageServiceImpl(ConversationUserService conversationUserService, ConversationService conversationService,  ComedyService comedyService) {
         log.debug("MessageService instantiated");
         this.conversationUserService = conversationUserService;
         this.conversationService = conversationService;
-        this.paymentService = paymentService;
+        //this.paymentService = paymentService;
+        this.comedyService = comedyService;
     }
 
     @Override
@@ -56,12 +58,21 @@ public class MessageServiceImpl implements MessageService {
     public void addMessage(String from, String to, String content) {
         log.debug("add message from " + from + " to " + to + " with content: " + content);
 
-        if (to.equals("ps")) {
+        /*if (to.equals("ps")) {
             log.debug("---> calling remote payment service");
             Conversation conversationFrom = conversationUserService.getConversationFromByNicknameTo(to, from);
             conversationService.saveMessages(conversationFrom, content, "out");
             PayActionResponseDTO payActionResponseDTO = paymentService.doPayAction(from, to, content);
             conversationService.saveMessages(conversationFrom, payActionResponseDTO.getDescription(), "in");
+            return;
+        }*/
+
+        if(to.equals("js")){
+            log.debug("---> calling remote joke serice");
+            Conversation conversationFrom = conversationUserService.getConversationFromByNicknameTo(to, from);
+            conversationService.saveMessages(conversationFrom, content, "out");
+            JokeActionResponseDTO jokeActionResponseDTO = comedyService.doJokeAction(from, to, content);
+            conversationService.saveMessages(conversationFrom, jokeActionResponseDTO.getDescription(), "in");
             return;
         }
 
