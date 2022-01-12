@@ -1,7 +1,6 @@
 package com.example.jokeservice.model;
 
 import com.example.jokeservice.common.BaseEntity;
-import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -13,7 +12,7 @@ public class Joke extends BaseEntity<Long> {
 
     private Rating rated;
 
-    @JsonBackReference
+    //@JsonBackReference
     @ManyToOne
     private Joker joker;
 

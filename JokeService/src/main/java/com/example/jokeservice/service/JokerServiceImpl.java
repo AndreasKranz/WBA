@@ -14,9 +14,9 @@ import java.util.Optional;
 import java.util.Random;
 
 @Service
-public class JokeRServiceImpl implements JokeRService{
+public class JokerServiceImpl implements JokeRService{
 
-    private static final Logger log = LoggerFactory.getLogger(JokeRServiceImpl.class);
+    private static final Logger log = LoggerFactory.getLogger(JokerServiceImpl.class);
     @Autowired
     private JokerRepository jokeRRepository;
 
@@ -42,8 +42,8 @@ public class JokeRServiceImpl implements JokeRService{
         //Joker joker = jokeRRepository.findByName("Harald");
         if(jokeROptional.isPresent()){
             List<Joke> temp = jokeROptional.get().getJokes();
-            log.debug("@Service:Name" + jokeROptional.get().getName());
-            log.debug("@Service:Size der LIST von Jokes"+temp.size());
+            log.debug("@Service:Name " + jokeROptional.get().getName());
+            log.debug("@Service:Size der LIST von Jokes "+temp.size());
             int index = rand.nextInt(temp.size());
             log.debug("@Service: Random Joke delivered!");
             return temp.get(index).getJoke();
@@ -55,7 +55,7 @@ public class JokeRServiceImpl implements JokeRService{
     @Override
     public String getRandomDarkJoke() {
         Random rand = new Random();
-        Optional<Joker> jokeROptional = jokeRRepository.findByName("1");
+        Optional<Joker> jokeROptional = jokeRRepository.findByName("Harald");
         if(jokeROptional.isPresent()){
             List<Joke> temp = jokeROptional.get().getDarkJokes();
             int index = rand.nextInt(temp.size());

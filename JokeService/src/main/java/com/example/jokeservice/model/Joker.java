@@ -14,7 +14,8 @@ public class Joker extends BaseEntity<Long> {
 
     private String name;
 
-    @OneToMany(mappedBy = "joker", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+
+    @OneToMany(mappedBy = "joker", cascade = CascadeType.ALL)// fetch = FetchType.EAGER)
     private List<Joke> jokes;
 
 

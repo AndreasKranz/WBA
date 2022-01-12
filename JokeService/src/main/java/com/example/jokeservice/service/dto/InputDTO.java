@@ -2,7 +2,9 @@ package com.example.jokeservice.service.dto;
 
 import com.example.jokeservice.model.Rating;
 
-public class InputDTO {
+import java.io.Serializable;
+
+public class InputDTO implements Serializable {
 
     String joke;
     Rating rating;

@@ -2,7 +2,9 @@ package edu.fra.uas.message.service.dto;
 
 import edu.fra.uas.message.service.Rating;
 
-public class InputDTO {
+import java.io.Serializable;
+
+public class InputDTO implements Serializable {
 
 
 
