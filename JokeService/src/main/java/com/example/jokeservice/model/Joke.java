@@ -1,9 +1,13 @@
 package com.example.jokeservice.model;
 
 import com.example.jokeservice.common.BaseEntity;
+import org.hibernate.Hibernate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import java.util.Objects;
 
 @Entity
 public class Joke extends BaseEntity<Long> {
@@ -12,13 +16,26 @@ public class Joke extends BaseEntity<Long> {
 
     private Rating rated;
 
-    //@JsonBackReference
-    @ManyToOne
+    @ManyToOne(cascade =  CascadeType.REMOVE, optional = false)
+    @JoinColumn(name = "joker_id", nullable = false, unique = true)
     private Joker joker;
 
-    public Joke(String joke, Rating rated){
+
+    public void setJoker(Joker joker) {
+        this.joker = joker;
+    }
+
+    /*
+    @ManyToOne
+    private Joker joker;
+*/
+
+
+
+    public Joke(String joke, Rating rated, Joker joker){
         this.joke = joke;
         this.rated = rated;
+        this.joker = joker;
     }
 
     public Joke() {
@@ -44,5 +61,18 @@ public class Joke extends BaseEntity<Long> {
 
     public Joker getJoker() {
         return joker;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Joke joke = (Joke) o;
+        return getId() != null && Objects.equals(getId(), joke.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
     }
 }

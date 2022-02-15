@@ -1,7 +1,6 @@
 package com.example.jokeservice.controller;
 
 
-import com.example.jokeservice.model.Joke;
 import com.example.jokeservice.model.Rating;
 import com.example.jokeservice.service.JokeRService;
 import com.example.jokeservice.service.dto.InputDTO;
@@ -50,11 +49,11 @@ public class JokeServiceController {
         String inputJoke = input.getJoke();
         if (input.getRating().equals(Rating.unproblematic)) {
             log.debug("@Controller:Versuch Joke zu adden");
-            jokeRService.addJoke(new Joke(inputJoke,Rating.unproblematic));
+            jokeRService.addJoke(inputJoke,Rating.unproblematic);
             return ResponseEntity.status(HttpStatus.CREATED).body(new JokeResponseDTO("Joke successfully added as \"unproblematic\""));
         } else if (input.getRating().equals(Rating.dark)){
             log.debug("@Controller:Versuch dark Joke zu adden!");
-            jokeRService.addJoke(new Joke(inputJoke,Rating.dark));
+            jokeRService.addJoke(inputJoke,Rating.dark);
             return ResponseEntity.status(HttpStatus.CREATED).body(new JokeResponseDTO("Joke successfully added as \"dark\""));
         } else {
             log.debug("@Controller: Error enum Vergleich zum adden gefailed!");

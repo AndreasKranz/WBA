@@ -32,18 +32,18 @@ public class InitializeDB {
         jokeR.setName("Harald");
         jokeRRepository.save(jokeR);
 
-        Joke joke1 = new Joke("Warum trinken Mäuse keinen Alkohol.\n Weil sie Angst vor dem Kater haben.", Rating.unproblematic);
-        Joke joke2 = new Joke("Polizeikontrolle! Alkohol, Drogen?\n Verkaufen Sie auch Pommes?", Rating.unproblematic);
+        Joke joke1 = new Joke("Warum trinken Mäuse keinen Alkohol.\n Weil sie Angst vor dem Kater haben.", Rating.unproblematic,jokeR);
+        Joke joke2 = new Joke("Polizeikontrolle! Alkohol, Drogen?\n Verkaufen Sie auch Pommes?", Rating.unproblematic,jokeR);
         Joke joke3 = new Joke("Der Arzt zum Patienten: \"Leider kann ich die Ursache Ihrer Krankheit nicht finden, " +
-                "aber vielleicht liegt es am Alkohol.\" \n \"Gut, dann komme ich wieder, wenn Sie nüchtern sind!\"", Rating.unproblematic);
+                "aber vielleicht liegt es am Alkohol.\" \n \"Gut, dann komme ich wieder, wenn Sie nüchtern sind!\"", Rating.unproblematic,jokeR);
         Joke joke4 = new Joke("\"Also, mein Lieber, mit Ihren Gallensteinen dürfen Sie keinen Alkohol mehr trinken!\" \n" +
-                "\"Das versteh ich nicht, Herr Doktor, es heißt doch immer: Steter Tropfen höhlt den Stein!\"", Rating.unproblematic);
-        Joke joke5 = new Joke("Ist man gleich ein Rassist, nur weil man keinen schwarzen Humor mag?", Rating.dark);
+                "\"Das versteh ich nicht, Herr Doktor, es heißt doch immer: Steter Tropfen höhlt den Stein!\"", Rating.unproblematic,jokeR);
+        Joke joke5 = new Joke("Ist man gleich ein Rassist, nur weil man keinen schwarzen Humor mag?", Rating.dark,jokeR);
         Joke joke6 = new Joke("Was macht ein Leprakranker, wenn er einen tollen Witz hört?\n" +
-                "Er lacht sich den Arsch ab.", Rating.dark);
+                "Er lacht sich den Arsch ab.", Rating.dark,jokeR);
         Joke joke7 = new Joke("Treffen sich 2 Jäger im Wald. Sagt der eine zum anderen: \"Du, ich hab grad deine Frau getroffen.\"\n" +
                 "Daraufhin der andere: \"Wo denn?\"\n" +
-                "\"Genau zwischen den Augen!\"", Rating.dark);
+                "\"Genau zwischen den Augen!\"", Rating.dark,jokeR);
         jokeRepository.save(joke1);
         jokeRepository.save(joke2);
         jokeRepository.save(joke3);
